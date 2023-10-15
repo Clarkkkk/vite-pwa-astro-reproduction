@@ -1,7 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import type { Props as BaseHeadProps } from '../components/BaseHead.astro';
-
+import { pwaInfo } from 'virtual:pwa-info';
 
 export interface Props {
 	seo?: BaseHeadProps;
@@ -13,6 +13,8 @@ const { seo } = Astro.props;
 <html lang="en">
   <head>
     <BaseHead {...seo} />
+    <script src="/src/pwa.ts"></script>
+    { pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} /> }
     <slot name="head-bottom" />
   </head>
   <body>

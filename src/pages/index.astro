@@ -4,13 +4,12 @@ import Container from "../components/Container.astro";
 
 const seo = {
   title: "Astro Minimal Starter",
-  description: "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support."
-  }
+  description:
+    "This is a starter repo for an blog built with Astro including open graph tags, canonical urls, RSS, sitemap support.",
+};
 ---
 
-<Layout
-  seo={seo}
->
+<Layout {seo}>
   <Container>
     <h1>Astro Minimal Starter</h1>
     <p>
@@ -39,6 +38,7 @@ const seo = {
       problem!
     </p>
 
-    <a href="/blog">Blog →</a>
+    <a href="/sub/blog">Blog →</a>
+    <a href="/sub/about">About →</a>
   </Container>
 </Layout>
